@@ -41,7 +41,7 @@ endif(ENABLE_TEST)
 
 
 # 安装到/usr/local/include中（其实就是把src下面的hpp复制）
-option(ENABLE_INSTALL "enable the install" ON)
+option(ENABLE_INSTALL "enable the install" OFF)
 if(ENABLE_INSTALL)
   # set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_LIST_DIR}/install)
   message("Installing dir: ${CMAKE_INSTALL_PREFIX}")
