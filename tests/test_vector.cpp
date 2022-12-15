@@ -1,7 +1,17 @@
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
 #include "mystl/vector.hpp"
 
-int main()
+using namespace mystl;
+
+TEST_CASE("vector_capacity")
 {
-    mystl::hello();
-    return 0;
+    mystl::vector v(10);
+    REQUIRE(v.capacity()==10);
+}
+
+TEST_CASE("vector_size")
+{
+    mystl::vector v(10);
+    REQUIRE(v.size()==0);
 }
