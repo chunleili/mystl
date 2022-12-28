@@ -37,6 +37,7 @@ if(ENABLE_TEST)
   #在这里增加测试
   addtest(catch)
   addtest(vector)
+  addtest(vec3)
 endif(ENABLE_TEST)
 
 

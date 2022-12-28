@@ -15,3 +15,9 @@ TEST_CASE("vector_size")
     mystl::vector v(10);
     REQUIRE(v.size()==0);
 }
+
+TEST_CASE("vector_ctor_val")
+{
+    mystl::vector v(10, 5);
+    REQUIRE(v.size()==10);
+}
