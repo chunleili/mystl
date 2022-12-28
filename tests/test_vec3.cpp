@@ -113,7 +113,7 @@ TEST_CASE("norm", "[vec3]")
     SECTION( "norm" ) 
     {
         mystl::vec3 v(1,2,3);
-        //其中Approx(14)是期望值，epsilon(0.0001)是允许的误差范围, 0.0001是相对误差, 即原始值的0.1%
+        //其中Approx(14)是期望值，epsilon(0.0001)是允许的误差范围, 0.0001是相对误差, 即原始值的0.01%
         REQUIRE(v.norm()==Approx(std::sqrt(14)).epsilon(0.0001));
     }
 
