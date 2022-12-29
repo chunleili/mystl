@@ -156,31 +156,7 @@ TEST_CASE("norm", "[vec3]")
 
 
 
-    // SECTION("norm (friend)")
-    // {
-    //     mystl::vec3 v(1,2,3);
-    //     REQUIRE(mystl::norm(v)==Approx(std::sqrt(14)).epsilon(0.0001));
-    // }
 
-    // SECTION("length (friend)")
-    // {
-    //     mystl::vec3 v(1,2,3);
-    //     REQUIRE(mystl::length(v)==Approx(std::sqrt(14)).epsilon(0.0001));
-    // }
-
-    // SECTION("normalize (friend)")
-    // {
-    //     mystl::vec3 v(1,2,3);
-    //     float length = std::sqrt(14);
-    //     float x_normalized = 1.0/length;
-    //     float y_normalized = 2.0/length;
-    //     float z_normalized = 3.0/length;
-    //     mystl::vec3 v2;
-    //     v2 = mystl::normalize(v);
-    //     REQUIRE(v2.x == Approx(x_normalized).epsilon(0.0001));
-    //     REQUIRE(v2.y == Approx(y_normalized).epsilon(0.0001));
-    //     REQUIRE(v2.z == Approx(z_normalized).epsilon(0.0001));
-    // }
 
 }
 
@@ -483,11 +459,39 @@ TEST_CASE("other","vec3")
         mystl::vec3 v2(1,2,4);
         REQUIRE(v.distance(v2)==1);
     }
+
     SECTION("distance (friend)")
     {
         mystl::vec3 v(1,2,3);
         mystl::vec3 v2(1,2,4);
-        REQUIRE(distance(v,v2)==1);
+        float d = mystl::distance(v,v2);
+        REQUIRE(d==1);
+    }
+
+    SECTION("norm (non-member)")
+    {
+        mystl::vec3 v(1,2,3);
+        REQUIRE(mystl::norm(v)==Approx(std::sqrt(14)).epsilon(0.0001));
+    }
+
+    SECTION("length (non-member)")
+    {
+        mystl::vec3 v(1,2,3);
+        REQUIRE(mystl::length(v)==Approx(std::sqrt(14)).epsilon(0.0001));
+    }
+
+    SECTION("normalize (non-member)")
+    {
+        mystl::vec3 v(1,2,3);
+        float length = std::sqrt(14);
+        float x_normalized = 1.0/length;
+        float y_normalized = 2.0/length;
+        float z_normalized = 3.0/length;
+        mystl::vec3 v2;
+        v2 = mystl::normalize(v);
+        REQUIRE(v2.x == Approx(x_normalized).epsilon(0.0001));
+        REQUIRE(v2.y == Approx(y_normalized).epsilon(0.0001));
+        REQUIRE(v2.z == Approx(z_normalized).epsilon(0.0001));
     }
 
 }

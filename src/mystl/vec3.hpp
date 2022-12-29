@@ -73,21 +73,6 @@ public:
     };
 
 
-    // friend float norm(const vec3 &v) // 模长
-    // {
-    //     return v.norm();
-    // };
-    // friend float length(const vec3 &v) // 模长
-    // {
-    //     return v.norm();
-    // };
-    // friend vec3 normalize(const vec3 &v) // 单位化
-    // {
-    //     float n = v.norm();
-    //     return vec3(v.x / n, v.y / n, v.z / n);
-    // };
-
-
     /* -------------------------------------------------------------------------- */
     /*                              与vec3加减乘除运算符                           */
     /* -------------------------------------------------------------------------- */
@@ -271,13 +256,28 @@ public:
     {
         return sqrt((this->x - rhs.x) * (this->x - rhs.x) + (this->y - rhs.y) * (this->y - rhs.y) + (this->z - rhs.z) * (this->z - rhs.z));
     }
-
-    friend float distance(const vec3 &lhs, const vec3 &rhs) // 两点间距离
-    {
-        return sqrt((lhs.x - rhs.x) * (lhs.x - rhs.x) + (lhs.y - rhs.y) * (lhs.y - rhs.y) + (lhs.z - rhs.z) * (lhs.z - rhs.z));
-    }
 };
 
+/* -------------------------------------------------------------------------- */
+/*                                    全局函数                                 */
+/* -------------------------------------------------------------------------- */
+float distance(const vec3 &lhs, const vec3 &rhs) // 两点间距离
+{
+    return sqrt((lhs.x - rhs.x) * (lhs.x - rhs.x) + (lhs.y - rhs.y) * (lhs.y - rhs.y) + (lhs.z - rhs.z) * (lhs.z - rhs.z));
+}
 
+float norm(const vec3 &v) // 模长
+{
+    return std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+};
+float length(const vec3 &v) // 模长
+{
+    return std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+};
+vec3 normalize(const vec3 &v) // 单位化
+{
+    float n = std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+    return vec3(v.x / n, v.y / n, v.z / n);
+};
 
 } // namespace mystl
