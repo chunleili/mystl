@@ -30,13 +30,13 @@ public:
     /* -------------------------------------------------------------------------- */
     friend std::ostream &operator<<(std::ostream &os, const vec3 &v)
     {
-        os << v.x << " " << v.y << " " << v.z;
+        os << v.x << " " << v.y << " " << v.z<< " ";
         return os;
     };
 
     void show() const
     {
-        std::cout << x << " " << y << " " << z << std::endl;
+        std::cout << x << " " << y << " " << z << "\n";
     };
 
 

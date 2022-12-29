@@ -38,6 +38,7 @@ if(ENABLE_TEST)
   addtest(catch)
   addtest(vector)
   addtest(vec3)
+  addtest(quat)
 endif(ENABLE_TEST)
 
 
