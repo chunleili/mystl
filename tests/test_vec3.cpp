@@ -460,7 +460,7 @@ TEST_CASE("other","vec3")
         REQUIRE(v.distance(v2)==1);
     }
 
-    SECTION("distance (friend)")
+    SECTION("distance (non-member)")
     {
         mystl::vec3 v(1,2,3);
         mystl::vec3 v2(1,2,4);

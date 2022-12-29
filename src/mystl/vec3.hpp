@@ -101,25 +101,7 @@ public:
         return vec3(this->x / rhs, this->y / rhs, this->z / rhs);
     }
     
-    friend vec3 operator+(const float lhs, const vec3 &rhs)// 数加(标量在左)
-    {
-        return vec3(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z);
-    }
-    
-    friend vec3 operator-(const float lhs, const vec3 &rhs)// 数减(标量在左)
-    {
-        return vec3(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z);
-    }
-    
-    friend vec3 operator*(const float lhs, const vec3 &rhs)// 数乘(标量在左)
-    {
-        return vec3(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z);
-    }
-    
-    friend vec3 operator/(const float lhs, const vec3 &rhs)// 数除(标量在左)
-    {
-        return vec3(lhs / rhs.x, lhs / rhs.y, lhs / rhs.z);
-    }
+
     
     float operator*(const vec3 &rhs) const // 点乘
     {
@@ -279,5 +261,26 @@ vec3 normalize(const vec3 &v) // 单位化
     float n = std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
     return vec3(v.x / n, v.y / n, v.z / n);
 };
+
+
+vec3 operator+(const float lhs, const vec3 &rhs)// 数加(标量在左)
+{
+    return vec3(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z);
+}
+
+vec3 operator-(const float lhs, const vec3 &rhs)// 数减(标量在左)
+{
+    return vec3(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z);
+}
+
+vec3 operator*(const float lhs, const vec3 &rhs)// 数乘(标量在左)
+{
+    return vec3(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z);
+}
+
+vec3 operator/(const float lhs, const vec3 &rhs)// 数除(标量在左)
+{
+    return vec3(lhs / rhs.x, lhs / rhs.y, lhs / rhs.z);
+}
 
 } // namespace mystl
